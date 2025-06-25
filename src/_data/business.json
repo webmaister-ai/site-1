@@ -1,0 +1,28 @@
+{
+  "name": "{{BUSINESS_NAME}}",
+  "phone": "{{BUSINESS_PHONE}}",
+  "address": {
+    "street": "{{BUSINESS_ADDRESS_STREET}}",
+    "city": "{{BUSINESS_ADDRESS_CITY}}",
+    "state": "{{BUSINESS_ADDRESS_STATE}}",
+    "zip": "{{BUSINESS_ADDRESS_ZIP}}",
+    "full": "{{BUSINESS_ADDRESS_FULL}}"
+  },
+  "hours": {
+    "monday": "{{BUSINESS_HOURS_MONDAY}}",
+    "tuesday": "{{BUSINESS_HOURS_TUESDAY}}", 
+    "wednesday": "{{BUSINESS_HOURS_WEDNESDAY}}",
+    "thursday": "{{BUSINESS_HOURS_THURSDAY}}",
+    "friday": "{{BUSINESS_HOURS_FRIDAY}}",
+    "saturday": "{{BUSINESS_HOURS_SATURDAY}}",
+    "sunday": "{{BUSINESS_HOURS_SUNDAY}}",
+    "weekdays": "{{BUSINESS_HOURS_WEEKDAYS_DISPLAY}}",
+    "weekend": "{{BUSINESS_HOURS_WEEKEND_DISPLAY}}"
+  },
+  "email": "{{BUSINESS_EMAIL}}",
+  "social": {
+    "facebook": "{{BUSINESS_FACEBOOK_URL}}",
+    "instagram": "{{BUSINESS_INSTAGRAM_URL}}"
+  },
+  "language": "{{SITE_LANGUAGE}}"
+}

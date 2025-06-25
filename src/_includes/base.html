@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if title %}{{ title }} - {% endif %}{{ business.name }}</title>
+    <meta name="description" content="{% if description %}{{ description }}{% else %}{{BUSINESS_DEFAULT_DESCRIPTION}}{% endif %}">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="font-body bg-gradient-to-br from-primary-50 to-accent-50 min-h-screen">
+    <!-- TEMPLATE_SECTION: Navigation - customize links and logo -->
+    <nav class="bg-white shadow-md">
+    </nav>
+
+    <!-- TEMPLATE_SECTION: Main content area -->
+    <main>
+        {{ content | safe}}
+    </main>
+
+    <!-- TEMPLATE_SECTION: Footer - customize contact info and links -->
+    <footer class="bg-primary-800 text-white py-8 mt-12">
+    </footer>
+</body>
+</html>

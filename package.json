@@ -1,0 +1,18 @@
+{
+  "name": "{{BUSINESS_SLUG}}",
+  "version": "1.0.0",
+  "description": "{{BUSINESS_NAME}} Website",
+  "type": "module",
+  "scripts": {
+    "dev": "npm run css:watch & eleventy --serve --watch",
+    "build": "npm run css:build && eleventy",
+    "preview": "eleventy --serve",
+    "css:build": "tailwindcss -i tailwind.config.css -o _site/css/style.css",
+    "css:watch": "tailwindcss -i tailwind.config.css -o _site/css/style.css --watch"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.1",
+    "tailwindcss": "^4.0.0",
+    "@tailwindcss/cli": "^4.0.0"
+  }
+}
