@@ -10,16 +10,25 @@
 <body class="font-sans bg-accent-50 min-h-screen flex flex-col">
 
     <!-- Navigation -->
-    <nav class="bg-white shadow-md sticky top-0 z-10">
+    <nav class="bg-gradient-to-r from-white via-pink-50 to-accent-50 shadow-lg sticky top-0 z-10 border-b-2 border-primary-200">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
-                <a href="/" class="text-2xl font-bold text-primary-500">{{ business.name }}</a>
-                <div class="hidden md:flex space-x-6">
-                    <a href="/" class="text-gray-600 hover:text-primary-500">Home</a>
-                    <a href="/contact" class="text-gray-600 hover:text-primary-500">Contact</a>
+                <a href="/" class="text-2xl font-bold text-primary-500 flex items-center gap-2 hover:scale-105 transition-transform">
+                    <span class="text-3xl">🍩</span>
+                    {{ business.name }}
+                    <span class="text-3xl">🍩</span>
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="/" class="text-gray-700 hover:text-primary-500 font-semibold flex items-center gap-1 transition-all hover:scale-105">
+                        <span class="text-lg">🏠</span> Home
+                    </a>
+                    <a href="/contact" class="text-gray-700 hover:text-primary-500 font-semibold flex items-center gap-1 transition-all hover:scale-105">
+                        <span class="text-lg">📞</span> Contact
+                    </a>
                 </div>
-                <div class="md:hidden">
-                    <!-- Mobile menu button can be added here -->
+                <div class="md:hidden flex items-center gap-2">
+                    <span class="text-2xl">🍩</span>
+                    <span class="text-xl">💕</span>
                 </div>
             </div>
         </div>
@@ -31,14 +40,61 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-primary-800 text-white py-8 mt-12">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; {% year %} {{ business.name }}. All Rights Reserved.</p>
-            <p class="mt-2">{{ business.contact.address.street }}, {{ business.contact.address.city }}, {{ business.contact.address.state }}</p>
-            <div class="mt-4">
-                <a href="mailto:{{ business.contact.email }}" class="hover:underline">{{ business.contact.email }}</a>
-                <span class="mx-2">|</span>
-                <span>{{ business.contact.phone }}</span>
+    <footer class="bg-gradient-to-r from-primary-800 via-pink-700 to-accent-700 text-white py-12 mt-12 relative overflow-hidden">
+        <div class="absolute top-4 left-4 text-2xl opacity-20 animate-bounce">🍩</div>
+        <div class="absolute top-4 right-4 text-2xl opacity-20 animate-pulse">✨</div>
+        <div class="absolute bottom-4 left-4 text-2xl opacity-20 animate-bounce delay-75">🌈</div>
+        <div class="absolute bottom-4 right-4 text-2xl opacity-20 animate-pulse delay-150">💖</div>
+        
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <div class="mb-6">
+                <h3 class="text-2xl font-bold mb-2 flex items-center justify-center gap-2">
+                    <span class="text-2xl">🍩</span> {{ business.name }} <span class="text-2xl">🍩</span>
+                </h3>
+                <p class="text-lg opacity-90">Spreading sweetness, one donut at a time!</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white bg-opacity-10 p-4 rounded-2xl backdrop-blur-sm">
+                    <div class="text-2xl mb-2">📍</div>
+                    <p class="font-semibold">Visit Us</p>
+                    <p class="text-sm opacity-90">{{ business.contact.address.street }}</p>
+                    <p class="text-sm opacity-90">{{ business.contact.address.city }}, {{ business.contact.address.state }}</p>
+                </div>
+                <div class="bg-white bg-opacity-10 p-4 rounded-2xl backdrop-blur-sm">
+                    <div class="text-2xl mb-2">📞</div>
+                    <p class="font-semibold">Call Us</p>
+                    <a href="tel:{{ business.contact.phone }}" class="hover:underline text-yellow-200">{{ business.contact.phone }}</a>
+                </div>
+                <div class="bg-white bg-opacity-10 p-4 rounded-2xl backdrop-blur-sm">
+                    <div class="text-2xl mb-2">📧</div>
+                    <p class="font-semibold">Email Us</p>
+                    <a href="mailto:{{ business.contact.email }}" class="hover:underline text-yellow-200">{{ business.contact.email }}</a>
+                </div>
+            </div>
+            
+            <div class="flex justify-center gap-6 mb-6">
+                <div class="text-center">
+                    <div class="text-2xl mb-1">📷</div>
+                    <p class="text-xs font-semibold">{{ business.social.instagram }}</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl mb-1">👥</div>
+                    <p class="text-xs font-semibold">{{ business.social.facebook }}</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl mb-1">🎵</div>
+                    <p class="text-xs font-semibold">{{ business.social.tiktok }}</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-white border-opacity-20 pt-6">
+                <p class="flex items-center justify-center gap-2">
+                    <span class="text-lg">©</span> 
+                    {% year %} {{ business.name }}. All Rights Reserved.
+                    <span class="text-lg">💕</span>
+                </p>
+                <p class="text-sm opacity-75 mt-2">Made with love and lots of sprinkles!</p>
             </div>
         </div>
     </footer>
