@@ -1,16 +1,5 @@
 {
   "permissions": {
-    "allow": [
-      "Bash:*",
-      "Edit:*",
-      "MultiEdit:*",
-      "Write:*",
-      "Read:*",
-      "Glob:*",
-      "LS:*",
-      "Task:*"
-    ],
-    "deny": [],
     "defaultMode": "allowAll"
   },
   "env": {
