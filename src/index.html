@@ -6,37 +6,65 @@ description: "The sweetest donuts in town! Freshly baked daily."
 
 <div class="container mx-auto px-4 py-12">
 
-    <!-- Header Section -->
-    <header class="text-center mb-12">
+    <!-- Hero Section -->
+    <header class="text-center mb-20 bg-accent-100 rounded-lg p-8">
         <h1 class="text-5xl font-bold text-primary-500 mb-2">{{ business.name }}</h1>
         <p class="text-xl text-gray-600">{{ business.tagline }}</p>
+        <a href="#menu" class="mt-6 inline-block bg-primary-500 text-white font-bold py-3 px-8 rounded-full hover:bg-primary-600 transition-colors">View Our Donuts</a>
     </header>
 
     <!-- About Us Section -->
-    <section class="mb-12">
+    <section class="mb-20">
         <h2 class="text-3xl font-semibold text-center text-primary-400 mb-6">About Us</h2>
         <p class="text-lg text-gray-700 max-w-3xl mx-auto text-center">{{ business.aboutUs }}</p>
     </section>
 
-    <!-- Specialties Section -->
-    <section class="mb-12">
-        <h2 class="text-3xl font-semibold text-center text-primary-400 mb-6">Our Specialties</h2>
+    <!-- Menu Section -->
+    <section id="menu" class="mb-20">
+        <h2 class="text-3xl font-semibold text-center text-primary-400 mb-10">Our Famous Donuts</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {% for specialty in business.specialties %}
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-xl font-bold text-primary-500 mb-2">{{ specialty.split(':')[0] }}</h3>
-                <p class="text-gray-600">{{ specialty.split(':')[1] }}</p>
+            <!-- Donut 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <img src="https://placehold.co/300x200/f43f5e/fff?text=Glazed+Donut" alt="Glazed Donut" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-bold text-primary-500 mb-2">Classic Glazed</h3>
+                <p class="text-gray-600">A timeless classic, perfectly sweet and fluffy.</p>
             </div>
-            {% endfor %}
+            <!-- Donut 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <img src="https://placehold.co/300x200/fde047/fff?text=Sprinkle+Donut" alt="Sprinkle Donut" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-bold text-primary-500 mb-2">Sprinkle Explosion</h3>
+                <p class="text-gray-600">A fun and colorful treat for all ages.</p>
+            </div>
+            <!-- Donut 3 -->
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <img src="https://placehold.co/300x200/fb7185/fff?text=Chocolate+Donut" alt="Chocolate Donut" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-bold text-primary-500 mb-2">Chocolate Dream</h3>
+                <p class="text-gray-600">Rich, decadent, and utterly irresistible.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="text-center">
-        <h2 class="text-3xl font-semibold text-center text-primary-400 mb-6">Visit Us!</h2>
-        <p class="text-lg text-gray-700">{{ business.contact.address.street }}, {{ business.contact.address.city }}, {{ business.contact.address.state }}</p>
-        <p class="text-lg text-gray-700">Phone: {{ business.contact.phone }}</p>
-        <p class="text-lg text-gray-700">Email: {{ business.contact.email }}</p>
+    <!-- Testimonials Section -->
+    <section class="mb-20">
+        <h2 class="text-3xl font-semibold text-center text-primary-400 mb-10">What Our Customers Say</h2>
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="bg-accent-50 p-6 rounded-lg">
+                <p class="text-gray-700 italic">"The best donuts in Sweet City! Always fresh and delicious. My kids love the sprinkle explosion."</p>
+                <p class="text-right font-bold text-primary-500 mt-4">- Happy Parent</p>
+            </div>
+            <div class="bg-accent-50 p-6 rounded-lg">
+                <p class="text-gray-700 italic">"I'm a regular for a reason. The coffee is great and the donuts are even better. A perfect start to my day."</p>
+                <p class="text-right font-bold text-primary-500 mt-4">- Morning Commuter</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="text-center bg-primary-500 text-white p-12 rounded-lg">
+        <h2 class="text-3xl font-bold mb-4">Visit Us Today!</h2>
+        <p class="text-lg mb-6">We're open seven days a week to satisfy your sweet cravings.</p>
+        <p class="text-lg font-semibold">{{ business.contact.address.street }}, {{ business.contact.address.city }}</p>
+        <p class="text-lg font-semibold">Phone: {{ business.contact.phone }}</p>
     </section>
 
 </div>
