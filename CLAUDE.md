@@ -1,6 +1,6 @@
-# CLAUDE.md
+# AI Assistant Guidelines
 
-This file provides guidance to Claude Code when working with this website.
+This file provides guidance to the AI assistant when working with this website.
 
 ## Code Generation Guidelines
 
@@ -51,6 +51,8 @@ This file provides guidance to Claude Code when working with this website.
 export default function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/images");
+
+  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
   
   return {
     dir: {
@@ -117,7 +119,7 @@ npm run build
 ### Content Update Process
 When business information changes:
 1. Human updates `site-information.md` 
-2. Claude Code reads the markdown and generates/updates `src/_data/business.json`
+2. AI assistant reads the markdown and generates/updates `src/_data/business.json`
 3. Eleventy templates automatically use the updated data
 
 ### Data Generation Rules
@@ -142,7 +144,7 @@ When business information changes:
 
 ### Important: Prompts Directory
 - The `prompts/` folder exists for human record-keeping only
-- Claude Code should never read from or reference this directory
+- The AI assistant should never read from or reference this directory
 - All necessary context will be provided explicitly in each request
 - Do not scan or explore the prompts directory for any reason
 

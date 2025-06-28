@@ -1,28 +1,39 @@
 {
-  "name": "{{BUSINESS_NAME}}",
-  "phone": "{{BUSINESS_PHONE}}",
-  "address": {
-    "street": "{{BUSINESS_ADDRESS_STREET}}",
-    "city": "{{BUSINESS_ADDRESS_CITY}}",
-    "state": "{{BUSINESS_ADDRESS_STATE}}",
-    "zip": "{{BUSINESS_ADDRESS_ZIP}}",
-    "full": "{{BUSINESS_ADDRESS_FULL}}"
+  "name": "Sweet Donuts Inc.",
+  "tagline": "Bringing sweetness to your day, one donut at a time!",
+  "designTheme": "Happy and playful - bright colors, fun fonts, cheerful imagery",
+  "contact": {
+    "address": {
+      "street": "123 Sprinkle Street",
+      "city": "Bakery District",
+      "state": "Sweet City, SC 29401"
+    },
+    "phone": "(555) 366-8896",
+    "email": "hello@sweetdonutsinc.com",
+    "website": "sweetdonutsinc.com"
   },
   "hours": {
-    "monday": "{{BUSINESS_HOURS_MONDAY}}",
-    "tuesday": "{{BUSINESS_HOURS_TUESDAY}}", 
-    "wednesday": "{{BUSINESS_HOURS_WEDNESDAY}}",
-    "thursday": "{{BUSINESS_HOURS_THURSDAY}}",
-    "friday": "{{BUSINESS_HOURS_FRIDAY}}",
-    "saturday": "{{BUSINESS_HOURS_SATURDAY}}",
-    "sunday": "{{BUSINESS_HOURS_SUNDAY}}",
-    "weekdays": "{{BUSINESS_HOURS_WEEKDAYS_DISPLAY}}",
-    "weekend": "{{BUSINESS_HOURS_WEEKEND_DISPLAY}}"
+    "mondayFriday": "6:00 AM - 7:00 PM",
+    "saturday": "7:00 AM - 8:00 PM",
+    "sunday": "8:00 AM - 6:00 PM"
   },
-  "email": "{{BUSINESS_EMAIL}}",
   "social": {
-    "facebook": "{{BUSINESS_FACEBOOK_URL}}",
-    "instagram": "{{BUSINESS_INSTAGRAM_URL}}"
+    "instagram": "@sweetdonutsinc",
+    "facebook": "Sweet Donuts Inc.",
+    "tiktok": "@sweetdonuts"
   },
-  "language": "{{SITE_LANGUAGE}}"
+  "aboutUs": "Sweet Donuts Inc. has been spreading joy through delicious, handcrafted donuts since 2015. Our mission is to brighten every customer's day with our playful flavors, colorful glazes, and warm, welcoming atmosphere.\n\nWe believe that life is better with sprinkles! Our donuts are made fresh daily using premium ingredients and a whole lot of love. From classic glazed to our signature rainbow sprinkle explosion, we have something to make everyone smile.",
+  "specialties": [
+    "Fresh Daily Donuts: Made every morning before dawn",
+    "Custom Donut Cakes: Perfect for birthdays and celebrations",
+    "Seasonal Flavors: Always something new and exciting",
+    "Coffee & Beverages: The perfect pairing for our sweet treats",
+    "Donut Decorating Parties: Fun for kids and adults!"
+  ],
+  "values": [
+    "Quality: Only the finest ingredients in every donut",
+    "Joy: Spreading happiness one sweet treat at a time",
+    "Community: Supporting local events and causes",
+    "Fun: Life's too short for boring food!"
+  ]
 }

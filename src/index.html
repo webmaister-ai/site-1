@@ -1,7 +1,42 @@
 ---
 layout: base.html
-title: Home
-description: The intended frontpage
+title: Welcome to Sweet Donuts Inc.!
+description: "The sweetest donuts in town! Freshly baked daily."
 ---
 
-<!-- Place the frontpage content here -->
+<div class="container mx-auto px-4 py-12">
+
+    <!-- Header Section -->
+    <header class="text-center mb-12">
+        <h1 class="text-5xl font-bold text-primary-500 mb-2">{{ business.name }}</h1>
+        <p class="text-xl text-gray-600">{{ business.tagline }}</p>
+    </header>
+
+    <!-- About Us Section -->
+    <section class="mb-12">
+        <h2 class="text-3xl font-semibold text-center text-primary-400 mb-6">About Us</h2>
+        <p class="text-lg text-gray-700 max-w-3xl mx-auto text-center">{{ business.aboutUs }}</p>
+    </section>
+
+    <!-- Specialties Section -->
+    <section class="mb-12">
+        <h2 class="text-3xl font-semibold text-center text-primary-400 mb-6">Our Specialties</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for specialty in business.specialties %}
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-bold text-primary-500 mb-2">{{ specialty.split(':')[0] }}</h3>
+                <p class="text-gray-600">{{ specialty.split(':')[1] }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="text-center">
+        <h2 class="text-3xl font-semibold text-center text-primary-400 mb-6">Visit Us!</h2>
+        <p class="text-lg text-gray-700">{{ business.contact.address.street }}, {{ business.contact.address.city }}, {{ business.contact.address.state }}</p>
+        <p class="text-lg text-gray-700">Phone: {{ business.contact.phone }}</p>
+        <p class="text-lg text-gray-700">Email: {{ business.contact.email }}</p>
+    </section>
+
+</div>

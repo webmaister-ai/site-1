@@ -1,0 +1,8 @@
+{
+  "contextFileName": "CLAUDE.md",
+  "autoAccept": false,
+  "fileFiltering": {
+    "respectGitIgnore": true,
+    "enableRecursiveFileSearch": true
+  }
+}
