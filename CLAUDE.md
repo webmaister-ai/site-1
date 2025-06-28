@@ -30,7 +30,7 @@ This file provides guidance to Claude Code when working with this website.
 
 ## Project Structure
 
-** IMPORTANT: Under no circumstances are you to look inside the _site folder, it is a build artifact and can be completely ignored **
+**IMPORTANT: Under no circumstances are you to work inside the _site folder, it is a build artifact and can be completely ignored**
 
 ### Expected Layout
 ```
