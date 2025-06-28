@@ -2,6 +2,10 @@ export default function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/images");
 
+  eleventyConfig.addFilter("url_encode", function (str) {
+    return encodeURIComponent(str);
+  });
+
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
   
   return {
