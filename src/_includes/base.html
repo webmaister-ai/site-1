@@ -54,22 +54,29 @@
                 <p class="text-lg opacity-90">Spreading sweetness, one donut at a time!</p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-6 mb-8">
-                <div class="bg-white bg-opacity-10 p-4 rounded-2xl backdrop-blur-sm">
+            <div class="grid md:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white bg-opacity-20 p-4 rounded-2xl backdrop-blur-sm text-gray-800">
                     <div class="text-2xl mb-2">📍</div>
-                    <p class="font-semibold">Visit Us</p>
-                    <p class="text-sm opacity-90">{{ business.contact.address.street }}</p>
-                    <p class="text-sm opacity-90">{{ business.contact.address.city }}, {{ business.contact.address.state }}</p>
+                    <p class="font-semibold text-gray-900">Visit Us</p>
+                    <p class="text-sm text-gray-700">{{ business.contact.address.street }}</p>
+                    <p class="text-sm text-gray-700">{{ business.contact.address.city }}, {{ business.contact.address.state }}</p>
                 </div>
-                <div class="bg-white bg-opacity-10 p-4 rounded-2xl backdrop-blur-sm">
+                <div class="bg-white bg-opacity-20 p-4 rounded-2xl backdrop-blur-sm text-gray-800">
                     <div class="text-2xl mb-2">📞</div>
-                    <p class="font-semibold">Call Us</p>
-                    <a href="tel:{{ business.contact.phone }}" class="hover:underline text-yellow-200">{{ business.contact.phone }}</a>
+                    <p class="font-semibold text-gray-900">Call Us</p>
+                    <a href="tel:{{ business.contact.phone }}" class="hover:underline text-primary-600 font-medium">{{ business.contact.phone }}</a>
                 </div>
-                <div class="bg-white bg-opacity-10 p-4 rounded-2xl backdrop-blur-sm">
+                <div class="bg-white bg-opacity-20 p-4 rounded-2xl backdrop-blur-sm text-gray-800">
+                    <div class="text-2xl mb-2">🕐</div>
+                    <p class="font-semibold text-gray-900">Open</p>
+                    <p class="text-sm text-gray-700">Mon-Fri: {{ business.hours.mondayFriday }}</p>
+                    <p class="text-sm text-gray-700">Sat: {{ business.hours.saturday }}</p>
+                    <p class="text-sm text-gray-700">Sun: {{ business.hours.sunday }}</p>
+                </div>
+                <div class="bg-white bg-opacity-20 p-4 rounded-2xl backdrop-blur-sm text-gray-800">
                     <div class="text-2xl mb-2">📧</div>
-                    <p class="font-semibold">Email Us</p>
-                    <a href="mailto:{{ business.contact.email }}" class="hover:underline text-yellow-200">{{ business.contact.email }}</a>
+                    <p class="font-semibold text-gray-900">Email Us</p>
+                    <a href="mailto:{{ business.contact.email }}" class="hover:underline text-primary-600 font-medium">{{ business.contact.email }}</a>
                 </div>
             </div>
             
