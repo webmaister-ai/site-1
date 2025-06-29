@@ -1,7 +1,316 @@
 ---
 layout: base.html
-title: Home
-description: The intended frontpage
+title: Welcome to Sweet Donuts Inc.!
+description: "The sweetest donuts in town! Freshly baked daily."
 ---
 
-<!-- Place the frontpage content here -->
+<div class="container mx-auto px-4 py-12">
+
+    <!-- Hero Section -->
+    <header class="text-center mb-20 bg-gradient-to-r from-primary-100 via-yellow-100 to-accent-100 rounded-3xl p-12 relative overflow-hidden">
+        <div class="absolute top-4 left-4 text-4xl animate-bounce">🍩</div>
+        <div class="absolute top-8 right-8 text-3xl animate-pulse">✨</div>
+        <div class="absolute bottom-4 left-8 text-3xl animate-bounce delay-75">🌈</div>
+        <div class="absolute bottom-8 right-4 text-2xl animate-pulse delay-150">💕</div>
+        <h1 class="text-6xl font-bold text-primary-500 mb-4">🍩 {{ business.name }} 🍩</h1>
+        <p class="text-2xl text-gray-700 mb-6">{{ business.tagline }}</p>
+        <div class="flex justify-center gap-4 text-2xl mb-8">
+            <span class="animate-bounce">🎉</span>
+            <span class="animate-pulse">🍭</span>
+            <span class="animate-bounce delay-75">🧁</span>
+            <span class="animate-pulse delay-150">🎂</span>
+        </div>
+        <a href="#menu" class="inline-block bg-gradient-to-r from-primary-500 to-accent-500 text-white font-bold py-4 px-10 rounded-full hover:from-primary-600 hover:to-accent-600 transition-all transform hover:scale-105 shadow-lg text-lg">🍩 View Our Amazing Donuts! 🍩</a>
+    </header>
+
+    <!-- About Us Section -->
+    <section class="mb-20 bg-white rounded-3xl p-8 shadow-lg">
+        <h2 class="text-4xl font-semibold text-center text-primary-400 mb-8 flex items-center justify-center gap-3">
+            <span class="text-3xl">🏪</span> About Us <span class="text-3xl">❤️</span>
+        </h2>
+        <p class="text-lg text-gray-700 max-w-3xl mx-auto text-center leading-relaxed mb-6">{{ business.aboutUs }}</p>
+        <div class="flex justify-center gap-8 text-center mt-8">
+            <div class="bg-yellow-100 p-4 rounded-2xl">
+                <div class="text-3xl mb-2">🌅</div>
+                <p class="text-sm font-semibold text-gray-700">Fresh Daily</p>
+            </div>
+            <div class="bg-pink-100 p-4 rounded-2xl">
+                <div class="text-3xl mb-2">💝</div>
+                <p class="text-sm font-semibold text-gray-700">Made with Love</p>
+            </div>
+            <div class="bg-purple-100 p-4 rounded-2xl">
+                <div class="text-3xl mb-2">🎨</div>
+                <p class="text-sm font-semibold text-gray-700">Creative Flavors</p>
+            </div>
+            <div class="bg-green-100 p-4 rounded-2xl">
+                <div class="text-3xl mb-2">🌟</div>
+                <p class="text-sm font-semibold text-gray-700">Premium Quality</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="mb-20">
+        <h2 class="text-4xl font-semibold text-center text-primary-400 mb-4 flex items-center justify-center gap-3">
+            <span class="text-4xl">🍩</span> Our Amazing Donut Collection <span class="text-4xl">🍩</span>
+        </h2>
+        <p class="text-center text-gray-600 mb-12 text-lg">Over 15 delicious varieties made fresh daily!</p>
+        
+        <!-- Featured Donuts -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-semibold text-center text-accent-500 mb-8 flex items-center justify-center gap-2">
+                <span class="text-2xl">⭐</span> Customer Favorites <span class="text-2xl">⭐</span>
+            </h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Donut 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg text-center transform hover:scale-105 transition-all border-2 border-yellow-200">
+                    <div class="text-5xl mb-4">🍩</div>
+                    <h3 class="text-xl font-bold text-primary-500 mb-2 flex items-center justify-center gap-2">
+                        <span class="text-lg">✨</span> Classic Glazed <span class="text-lg">✨</span>
+                    </h3>
+                    <p class="text-gray-600 mb-3">A timeless classic, perfectly sweet and fluffy.</p>
+                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">$2.50</span>
+                </div>
+                <!-- Donut 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg text-center transform hover:scale-105 transition-all border-2 border-pink-200">
+                    <div class="text-5xl mb-4">🌈</div>
+                    <h3 class="text-xl font-bold text-primary-500 mb-2 flex items-center justify-center gap-2">
+                        <span class="text-lg">🎉</span> Rainbow Sprinkle Explosion <span class="text-lg">🎉</span>
+                    </h3>
+                    <p class="text-gray-600 mb-3">A fun and colorful treat that brings joy to all ages.</p>
+                    <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm font-semibold">$3.25</span>
+                </div>
+                <!-- Donut 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg text-center transform hover:scale-105 transition-all border-2 border-purple-200">
+                    <div class="text-5xl mb-4">🍫</div>
+                    <h3 class="text-xl font-bold text-primary-500 mb-2 flex items-center justify-center gap-2">
+                        <span class="text-lg">💖</span> Chocolate Dream <span class="text-lg">💖</span>
+                    </h3>
+                    <p class="text-gray-600 mb-3">Rich, decadent chocolate that's utterly irresistible.</p>
+                    <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold">$3.00</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- All Donuts Menu -->
+        <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-3xl p-8">
+            <h3 class="text-3xl font-semibold text-center text-primary-500 mb-8 flex items-center justify-center gap-3">
+                <span class="text-3xl">🎂</span> Complete Menu <span class="text-3xl">🧁</span>
+            </h3>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Classic Collection -->
+                <div class="bg-white p-4 rounded-xl shadow-md text-center border border-yellow-200">
+                    <div class="text-3xl mb-2">🍩</div>
+                    <h4 class="font-bold text-primary-500 text-sm mb-1">Original Glazed</h4>
+                    <p class="text-xs text-gray-600 mb-2">The perfect classic</p>
+                    <span class="text-yellow-700 font-bold text-sm">$2.50</span>
+                </div>
+                
+                <div class="bg-white p-4 rounded-xl shadow-md text-center border border-orange-200">
+                    <div class="text-3xl mb-2">🍯</div>
+                    <h4 class="font-bold text-primary-500 text-sm mb-1">Honey Glazed</h4>
+                    <p class="text-xs text-gray-600 mb-2">Sweet golden honey</p>
+                    <span class="text-orange-700 font-bold text-sm">$2.75</span>
+                </div>
+                
+                <div class="bg-white p-4 rounded-xl shadow-md text-center border border-pink-200">
+                    <div class="text-3xl mb-2">🍓</div>
+                    <h4 class="font-bold text-primary-500 text-sm mb-1">Strawberry Frosted</h4>
+                    <p class="text-xs text-gray-600 mb-2">Fresh berry flavor</p>
+                    <span class="text-pink-700 font-bold text-sm">$3.00</span>
+                </div>
+                
+                <div class="bg-white p-4 rounded-xl shadow-md text-center border border-purple-200">
+                    <div class="text-3xl mb-2">🫐</div>
+                    <h4 class="font-bold text-primary-500 text-sm mb-1">Blueberry Cake</h4>
+                    <p class="text-xs text-gray-600 mb-2">Bursting with berries</p>
+                    <span class="text-purple-700 font-bold text-sm">$3.25</span>
+                </div>
+                
+                <!-- Chocolate Collection -->
+                <div class="bg-white p-4 rounded-xl shadow-md text-center border border-amber-200">
+                    <div class="text-3xl mb-2">🍫</div>
+                    <h4 class="font-bold text-primary-500 text-sm mb-1">Double Chocolate</h4>
+                    <p class="text-xs text-gray-600 mb-2">Chocolate on chocolate</p>
+                    <span class="text-amber-700 font-bold text-sm">$3.50</span>
+                </div>
+                
+                <div class="bg-white p-4 rounded-xl shadow-md text-center border border-red-200">
+                    <div class="text-3xl mb-2">🍒</div>
+                    <h4 class="font-bold text-primary-500 text-sm mb-1">Chocolate Cherry</h4>
+                    <p class="text-xs text-gray-600 mb-2">Rich & fruity combo</p>
+                    <span class="text-red-700 font-bold text-sm">$3.75</span>
+                </div>
+                
+                <div class="bg-white p-4 rounded-xl shadow-md text-center border border-green-200">
+                    <div class="text-3xl mb-2">🥥</div>
+                    <h4 class="font-bold text-primary-500 text-sm mb-1">Chocolate Coconut</h4>
+                    <p class="text-xs text-gray-600 mb-2">Tropical chocolate</p>
+                    <span class="text-green-700 font-bold text-sm">$3.50</span>
+                </div>
+                
+                <div class="bg-white p-4 rounded-xl shadow-md text-center border border-indigo-200">
+                    <div class="text-3xl mb-2">☕</div>
+                    <h4 class="font-bold text-primary-500 text-sm mb-1">Mocha Swirl</h4>
+                    <p class="text-xs text-gray-600 mb-2">Coffee chocolate blend</p>
+                    <span class="text-indigo-700 font-bold text-sm">$3.75</span>
+                </div>
+                
+                <!-- Specialty Collection -->
+                <div class="bg-white p-4 rounded-xl shadow-md text-center border border-cyan-200">
+                    <div class="text-3xl mb-2">🌈</div>
+                    <h4 class="font-bold text-primary-500 text-sm mb-1">Rainbow Sprinkles</h4>
+                    <p class="text-xs text-gray-600 mb-2">Colorful & fun</p>
+                    <span class="text-cyan-700 font-bold text-sm">$3.25</span>
+                </div>
+                
+                <div class="bg-white p-4 rounded-xl shadow-md text-center border border-lime-200">
+                    <div class="text-3xl mb-2">🍋</div>
+                    <h4 class="font-bold text-primary-500 text-sm mb-1">Lemon Cream</h4>
+                    <p class="text-xs text-gray-600 mb-2">Zesty & smooth</p>
+                    <span class="text-lime-700 font-bold text-sm">$3.50</span>
+                </div>
+                
+                <div class="bg-white p-4 rounded-xl shadow-md text-center border border-rose-200">
+                    <div class="text-3xl mb-2">🌹</div>
+                    <h4 class="font-bold text-primary-500 text-sm mb-1">Rose Vanilla</h4>
+                    <p class="text-xs text-gray-600 mb-2">Elegant & floral</p>
+                    <span class="text-rose-700 font-bold text-sm">$3.75</span>
+                </div>
+                
+                <div class="bg-white p-4 rounded-xl shadow-md text-center border border-violet-200">
+                    <div class="text-3xl mb-2">🎪</div>
+                    <h4 class="font-bold text-primary-500 text-sm mb-1">Carnival Special</h4>
+                    <p class="text-xs text-gray-600 mb-2">Cotton candy flavor</p>
+                    <span class="text-violet-700 font-bold text-sm">$4.00</span>
+                </div>
+                
+                <!-- Seasonal & Limited -->
+                <div class="bg-white p-4 rounded-xl shadow-md text-center border border-emerald-200">
+                    <div class="text-3xl mb-2">🍀</div>
+                    <h4 class="font-bold text-primary-500 text-sm mb-1">Mint Chocolate</h4>
+                    <p class="text-xs text-gray-600 mb-2">Cool & refreshing</p>
+                    <span class="text-emerald-700 font-bold text-sm">$3.50</span>
+                </div>
+                
+                <div class="bg-white p-4 rounded-xl shadow-md text-center border border-sky-200">
+                    <div class="text-3xl mb-2">⭐</div>
+                    <h4 class="font-bold text-primary-500 text-sm mb-1">Birthday Cake</h4>
+                    <p class="text-xs text-gray-600 mb-2">Celebration flavor</p>
+                    <span class="text-sky-700 font-bold text-sm">$3.75</span>
+                </div>
+                
+                <div class="bg-white p-4 rounded-xl shadow-md text-center border border-teal-200">
+                    <div class="text-3xl mb-2">🌊</div>
+                    <h4 class="font-bold text-primary-500 text-sm mb-1">Ocean Breeze</h4>
+                    <p class="text-xs text-gray-600 mb-2">Blue raspberry dream</p>
+                    <span class="text-teal-700 font-bold text-sm">$3.50</span>
+                </div>
+                
+                <div class="bg-white p-4 rounded-xl shadow-md text-center border border-orange-200">
+                    <div class="text-3xl mb-2">🎃</div>
+                    <h4 class="font-bold text-primary-500 text-sm mb-1">Pumpkin Spice</h4>
+                    <p class="text-xs text-gray-600 mb-2">Seasonal favorite</p>
+                    <span class="text-orange-700 font-bold text-sm">$3.75</span>
+                </div>
+            </div>
+            
+            <!-- Special Offers -->
+            <div class="mt-8 bg-gradient-to-r from-yellow-200 to-pink-200 rounded-2xl p-6 text-center">
+                <h4 class="text-2xl font-bold text-primary-600 mb-4 flex items-center justify-center gap-2">
+                    <span class="text-2xl">🎁</span> Special Deals <span class="text-2xl">🎁</span>
+                </h4>
+                <div class="grid md:grid-cols-3 gap-4 text-sm">
+                    <div class="bg-white p-3 rounded-lg">
+                        <div class="text-2xl mb-1">📦</div>
+                        <p class="font-bold text-primary-500">Dozen Deal</p>
+                        <p class="text-gray-600">Any 12 donuts for $30</p>
+                    </div>
+                    <div class="bg-white p-3 rounded-lg">
+                        <div class="text-2xl mb-1">☕</div>
+                        <p class="font-bold text-primary-500">Coffee Combo</p>
+                        <p class="text-gray-600">Donut + Coffee = $5</p>
+                    </div>
+                    <div class="bg-white p-3 rounded-lg">
+                        <div class="text-2xl mb-1">🌅</div>
+                        <p class="font-bold text-primary-500">Early Bird</p>
+                        <p class="text-gray-600">20% off before 8 AM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="mb-20">
+        <h2 class="text-4xl font-semibold text-center text-primary-400 mb-12 flex items-center justify-center gap-3">
+            <span class="text-3xl">💬</span> What Our Sweet Customers Say <span class="text-3xl">😍</span>
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div class="bg-gradient-to-br from-primary-50 to-pink-100 p-6 rounded-2xl border-2 border-primary-200 transform hover:scale-105 transition-all">
+                <div class="text-3xl mb-3 text-center">👨‍👩‍👧‍👦</div>
+                <p class="text-gray-700 italic mb-4">"The best donuts in Sweet City! Always fresh and delicious. My kids love the rainbow sprinkle explosion and beg to come here every weekend!"</p>
+                <p class="text-right font-bold text-primary-500">💕 Happy Parent</p>
+            </div>
+            <div class="bg-gradient-to-br from-accent-50 to-yellow-100 p-6 rounded-2xl border-2 border-accent-200 transform hover:scale-105 transition-all">
+                <div class="text-3xl mb-3 text-center">☕</div>
+                <p class="text-gray-700 italic mb-4">"I'm a regular for a reason! The coffee is amazing and the donuts are even better. The perfect sweet start to my day every morning."</p>
+                <p class="text-right font-bold text-primary-500">🌅 Morning Commuter</p>
+            </div>
+            <div class="bg-gradient-to-br from-purple-50 to-blue-100 p-6 rounded-2xl border-2 border-purple-200 transform hover:scale-105 transition-all">
+                <div class="text-3xl mb-3 text-center">🎂</div>
+                <p class="text-gray-700 italic mb-4">"Sweet Donuts Inc made our daughter's birthday party magical! The custom donut cake was absolutely stunning and tasted incredible."</p>
+                <p class="text-right font-bold text-primary-500">🎉 Party Planner</p>
+            </div>
+        </div>
+        
+        <!-- Star Rating -->
+        <div class="text-center mt-12">
+            <div class="text-4xl mb-4">⭐⭐⭐⭐⭐</div>
+            <p class="text-xl font-semibold text-primary-500">5.0 Stars • Over 500 Happy Reviews!</p>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="text-center bg-gradient-to-r from-primary-500 via-pink-500 to-accent-500 text-white p-12 rounded-3xl relative overflow-hidden">
+        <div class="absolute top-4 left-4 text-3xl animate-bounce">🍩</div>
+        <div class="absolute top-4 right-4 text-3xl animate-pulse">✨</div>
+        <div class="absolute bottom-4 left-4 text-3xl animate-bounce delay-75">🌈</div>
+        <div class="absolute bottom-4 right-4 text-3xl animate-pulse delay-150">💖</div>
+        
+        <h2 class="text-4xl font-bold mb-6 flex items-center justify-center gap-3">
+            <span class="text-3xl">🏪</span> Come Visit Our Sweet Shop! <span class="text-3xl">🏪</span>
+        </h2>
+        <p class="text-xl mb-8">We're open seven days a week to satisfy your sweet cravings with fresh, delicious donuts!</p>
+        
+        <div class="bg-white bg-opacity-20 rounded-2xl p-6 mb-8 backdrop-blur-sm text-gray-800">
+            <div class="grid md:grid-cols-3 gap-6 text-center">
+                <div>
+                    <div class="text-2xl mb-2">📍</div>
+                    <p class="font-semibold text-lg text-gray-900">{{ business.contact.address.street }}</p>
+                    <p class="font-semibold text-gray-900">{{ business.contact.address.city }}</p>
+                </div>
+                <div>
+                    <div class="text-2xl mb-2">📞</div>
+                    <p class="font-semibold text-lg text-gray-900">{{ business.contact.phone }}</p>
+                    <p class="text-sm text-gray-700">Call for custom orders!</p>
+                </div>
+                <div>
+                    <div class="text-2xl mb-2">🕰️</div>
+                    <p class="font-semibold text-gray-900">Open 7 Days</p>
+                    <p class="text-sm text-gray-700">Early bird specials daily!</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="/contact" class="bg-white text-primary-500 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg">
+                🗺️ Get Directions
+            </a>
+            <a href="tel:{{ business.contact.phone }}" class="bg-accent-600 text-white font-bold py-3 px-8 rounded-full hover:bg-accent-700 transition-all transform hover:scale-105 shadow-lg">
+                📞 Call Now
+            </a>
+        </div>
+    </section>
+
+</div>

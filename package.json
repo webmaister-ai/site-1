@@ -1,7 +1,7 @@
 {
-  "name": "{{BUSINESS_SLUG}}",
+  "name": "sweet-donuts-inc",
   "version": "1.0.0",
-  "description": "{{BUSINESS_NAME}} Website",
+  "description": "Sweet Donuts Inc. Website",
   "type": "module",
   "scripts": {
     "dev": "npm run css:watch & eleventy --serve --watch",

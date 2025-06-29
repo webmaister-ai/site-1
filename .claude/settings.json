@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "defaultMode": "allowAll"
+  },
+  "env": {
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "0"
+  }
+}
