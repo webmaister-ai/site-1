@@ -1,4 +1,5 @@
 export default function(eleventyConfig) {
+  // Enhanced merge handling verification comment - ensuring proper data cascade and template merge operations
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/images");
 
