@@ -1,0 +1,118 @@
+name: Deploy Site
+
+on:
+  push:
+    branches: [main, preview]
+  workflow_dispatch:  # Allow manual triggers
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build 11ty site
+        run: npm run build
+
+      - name: Verify build output
+        run: |
+          if [ ! -d "_site" ]; then
+            echo "Build failed: _site directory not found"
+            exit 1
+          fi
+          echo "Build successful. Files in _site:"
+          ls -la _site/
+
+      - name: Verify Dockerfile exists
+        run: |
+          if [ ! -f "Dockerfile" ]; then
+            echo "Error: Dockerfile not found in repository"
+            exit 1
+          fi
+          echo "✅ Dockerfile found"
+
+      - name: Extract site ID from repository name
+        id: site-info
+        run: |
+          # Extract site ID from repository name (assumes format: site-123)
+          SITE_ID=$(echo "${{ github.repository }}" | sed 's/.*site-//' | sed 's/[^0-9]//g')
+          echo "site_id=${SITE_ID}" >> $GITHUB_OUTPUT
+          echo "Site ID: ${SITE_ID}"
+
+      - name: Log in to Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=ref,event=branch
+            type=sha,prefix={{branch}}-
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Deploy to server
+        if: ${{ secrets.DEPLOY_WEBHOOK_URL && secrets.DEPLOY_TOKEN }}
+        run: |
+          # Extract branch name
+          BRANCH_NAME=${GITHUB_REF#refs/heads/}
+          
+          # Call deployment webhook
+          curl -X POST "${{ secrets.DEPLOY_WEBHOOK_URL }}" \
+            -H "Authorization: Bearer ${{ secrets.DEPLOY_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "site_id": ${{ steps.site-info.outputs.site_id }},
+              "branch": "'${BRANCH_NAME}'",
+              "commit_hash": "${{ github.sha }}",
+              "image": "${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:'${BRANCH_NAME}'",
+              "repository": "${{ github.repository }}"
+            }'
+
+      - name: Deployment status
+        if: ${{ secrets.DEPLOY_WEBHOOK_URL && secrets.DEPLOY_TOKEN }}
+        run: |
+          echo "✅ Deployment triggered successfully"
+          echo "Site ID: ${{ steps.site-info.outputs.site_id }}"
+          echo "Branch: ${GITHUB_REF#refs/heads/}"
+          echo "Commit: ${{ github.sha }}"
+          echo "Image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${GITHUB_REF#refs/heads/}"
+
+      - name: Build-only notice
+        if: ${{ !secrets.DEPLOY_WEBHOOK_URL || !secrets.DEPLOY_TOKEN }}
+        run: |
+          echo "ℹ️  Build completed successfully!"
+          echo "🔧 To enable deployment, add these repository secrets:"
+          echo "   - DEPLOY_WEBHOOK_URL"
+          echo "   - DEPLOY_TOKEN"
+          echo "📦 Image built: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${GITHUB_REF#refs/heads/}"
